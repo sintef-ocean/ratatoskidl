@@ -133,6 +133,8 @@ html_theme_options = {
 html_context = {
     "display_github": True,  # Integrate GitHub
     'github_url': 'https://github.com/sintef-ocean/ratatoskidl',
+    "sintef_home_url": "https://docs.sintef.io",
+    "sintef_home": "docs.sintef.io",
 }
 
 # Theme options are theme-specific and customize the look and feel of a theme
