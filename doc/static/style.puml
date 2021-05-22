@@ -1,0 +1,60 @@
+
+' https://crashedmind.github.io/PlantUMLHitchhikersGuide/C4/c4.html#c4-lightweight-software-architecture-description-method
+' https://github.com/plantuml/plantuml-stdlib
+' http://www.codingthearchitecture.com/2017/04/27/visualising_and_documenting_software_architecture_cheat_sheets.html
+' https://github.com/RicardoNiepel/C4-PlantUML
+
+!include  <C4/C4_Context.puml>
+!include  <C4/C4_Container.puml>
+
+skinparam defaultFontName  Helvetica
+skinparam sequenceMessageAlign center
+'skinparam monochrome true
+skinparam backgroundColor White
+
+skinparam activity {
+  ArrowColor Black
+  BorderColor Black
+  BorderThickness 1
+}
+
+skinparam actor {
+  BorderColor Black
+}
+
+skinparam usecase {
+  ArrowColor Black
+  BorderColor Black
+  BorderThickness 1
+}
+
+skinparam class {
+  ArrowColor Black
+
+  BorderColor Black
+  BorderThickness 1
+}
+
+
+skinparam object {
+  ArrowColor Black
+  BorderColor Black
+}
+
+skinparam package {
+  BorderColor Black
+}
+
+skinparam note {
+  BorderColor Black
+}
+
+skinparam state {
+  ArrowColor Black
+  BorderColor Black
+}
+
+
+skinparam interface {
+  BorderColor Black
+}

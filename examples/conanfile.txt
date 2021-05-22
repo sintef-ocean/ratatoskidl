@@ -1,0 +1,8 @@
+[requires]
+RatatoskIDL/0.2.0@sintef/stable
+opensplice-ce/[>=6.9]@sintef/stable
+
+[generators]
+virtualenv
+cmake_paths
+cmake

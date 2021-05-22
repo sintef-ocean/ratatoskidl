@@ -1,0 +1,251 @@
+/** @file FKIN/fkin_types.idl */
+
+
+/// Catch control in purse seine interface definition module
+module fkin
+{
+
+  /// Fundamental data structure for bit using boolean data type.
+  struct Bit
+  {
+    boolean value; ///< Bit is true (1) of false (0).
+  };
+#pragma keylist Bit
+
+  /// Floating point number with double precision.
+  struct Real
+  {
+    double value; ///< Real number with double precision.
+  };
+#pragma keylist Real
+
+  /// One dimensional vector with double precision element.
+  struct Vector1d
+  {
+    double x; ///< Double precision value.
+  };
+#pragma keylist Vector1d
+
+  /// Two dimensional vector with double precision elements.
+  struct Vector2d
+  {
+    double x; ///< First coordinate.
+    double y; ///< Second coordinate.
+  };
+#pragma keylist Vector2d
+
+  /// Tree dimensional vector with double precision elements.
+  struct Vector3d
+  {
+    double x; ///< First coordinate.
+    double y; ///< Second coordinate.
+    double z; ///< Third coordinate.
+  };
+#pragma keylist Vector3d
+
+  /// Four dimensional vector with double precision elements.
+  struct Vector4d
+  {
+    double x; ///< First coordinate.
+    double y; ///< Second coordinate.
+    double z; ///< Third coordinate.
+    double w; ///< Fourth coordinate.
+  };
+#pragma keylist Vector4d
+
+  /// Timestamp, which holds milliseconds since UNIX epoch (January 1, 1970 00:00:00 UTC)
+  struct Timestamp
+  {
+    long long unixMillis; ///< milliseconds since UNIX epoch (int64_t).
+  };
+
+  /// One dimensional vector with DDS key identifier for topic instance.
+  struct IdVec1d
+  {
+    string id; ///< Identifier string.
+    Vector1d vec; ///< Vector1d value.
+  };
+#pragma keylist IdVec1d id
+
+  /// Two dimensional vector with DDS key identifier for topic instance.
+  struct IdVec2d
+  {
+    string id; ///< Identifier string.
+    Vector2d vec; ///< Vector2d value.
+  };
+#pragma keylist IdVec2d id
+
+  /// Three dimensional vector with DDS key identifier for topic instance.
+  struct IdVec3d
+  {
+    string id; ///< Identifier string.
+    Vector3d vec; ///< Vector3d value.
+  };
+#pragma keylist IdVec3d id
+
+  /// Four dimensional vector with DDS key identifier for topic instance.
+  struct IdVec4d
+  {
+    string id; ///< Identifier string.
+    Vector4d vec; ///< Vector4d value.
+  };
+#pragma keylist IdVec4d id
+
+  /// A batch of Timestamp and IdVec1d data pairs.
+  struct BatchIdVec1d
+  {
+    string id; ///< Identifier string.
+    sequence<IdVec1d> batch; ///< A vector of IdVec1d. *batch* and *timestamps* shall be of equal length.
+    sequence<Timestamp> timestamps; ///< A vector of Timestamp.
+  };
+#pragma keylist BatchIdVec1d id
+
+  /// Data structure for planar motion. Holds 2D position, course and speed.
+  struct Kinematics2D
+  {
+    string id; ///< Identifier string.
+    Vector2d position; ///< 2D position, typically XY-plane / North-East.
+    Vector1d course; ///< Course. Orientation of velocity vector relative to a reference frame.
+    Vector1d speed; ///< Magnitude of velocity vector.
+  };
+#pragma keylist Kinematics2D id
+
+  /// A batch of pairs of Kinematics2D and Timestamp, which has a key identifier.
+  struct BatchKinematics2D
+  {
+    string id; ///< Identifier string.
+    sequence<Kinematics2D> batch; ///< A vector of Kinematics2D. *batch* and *timestamps* shall be of equal length.
+    sequence<Timestamp> timestamps; ///< A vector of Timestamp.
+  };
+#pragma keylist BatchKinematics2D id
+
+  /// Data structure for spatial motion in 3D. Holds position, velocity and euler angles, each as Vector3d.
+  struct Kinematics6D
+  {
+    string id; ///< Identifier string.
+    Vector3d position; ///< 3D position vector.
+    Vector3d velocity; ///< 3D velocity vector.
+    Vector3d euler; ///< 3D euler angles.
+  };
+#pragma keylist Kinematics6D id
+
+  /// A batch of pairs of Kinematics6D and Timestamp, which has a key identifier.
+  struct BatchKinematics6D
+  {
+    string id; ///< Identifier string.
+    sequence<Kinematics6D> batch; ///< A vector of Kinematics6D. *batch* and *timestamps* shall be of equal length.
+    sequence<Timestamp> timestamps; ///< A vector of Timestamp.
+  };
+#pragma keylist BatchKinematics6D id
+
+
+  /// Holds the states for a state machine, used in ProcessStateAutomaton
+  enum ProcessStateKind
+  {
+   IDLE, ///< Idle state, waiting for events
+   INITIALIZING, ///< The process is initializing
+   RUNNING, ///< Running process
+   FAILURE, ///< Failed state, the process has failed
+   DEAD, ///< Killed state, the process is not running
+   UNKNOWN ///< Undefined state
+  };
+
+  /// Automaton for a process with key identifier
+  struct ProcessStateAutomaton
+  {
+    string identifier;  ///< Identifier string.
+    ProcessStateKind state; ///< Enumeration for holding state automaton.
+  };
+#pragma keylist ProcessStateAutomaton identifier
+
+  /// Massage identifier helper structure used in RequestHeader and ReplyHeader.
+  struct MessageID
+  {
+    string senderUUID; ///< Sender's unique identifier.
+    long sequenceNumber; ///< Sequence number of message.
+  };
+
+  /// Header for a DDS Request, e.g. Command.
+  struct RequestHeader
+  {
+    MessageID requestID; ///< Request identifier.
+    string recipient; ///< Recipient of request.
+  };
+
+  /// Header for a DDS Reply, e.g. CommandResponse.
+  struct ReplyHeader
+  {
+    MessageID relatedRequestID; ///< Request identifier.
+  };
+
+  /// Actions to send to a process used in Command.
+  enum CommandType
+  {
+   START_PROCESS, ///< Start the process.
+   STOP_PROCESS, ///< Stop the process.
+   TERMINATE_PROCESS, ///< Terminate the process.
+   BOGUS_COMMAND ///< No operation.
+  };
+
+  /// Requested command/action.
+  struct Command
+  {
+    RequestHeader header; ///< Header for command.
+    CommandType command; ///< Action
+  };
+#pragma keylist Command header.recipient
+
+  /// Response to requested command.
+  struct CommandResponse
+  {
+    ReplyHeader header; ///< Header for reply to command.
+    boolean success; ///< Whether the command was a success.
+    string message; ///< Message regarding the requested command.
+  };
+#pragma keylist CommandResponse
+
+  /// Nonlinear programming functions statistics.
+  struct NlpFuncStat
+  {
+    double callback_fcn; ///< Callback function.
+    double nlp_f;        ///< Objective function.
+    double nlp_g;        ///< Constraint function.
+    double nlp_grad;     ///< Gradients.
+    double nlp_grad_f;   ///< Gradient objective function.
+    double nlp_hess_l;   ///< Hessian of the Lagrangian.
+    double nlp_jac_g;    ///< Jacobian of constraint function.
+    double total;        ///< Total time/calls.
+  };
+
+  /// Optimization statistics as reported by solver function.
+  struct OptiStats
+  {
+    string id;                ///< Key identifier.
+    unsigned long iterations; ///< Number of iterations nlp.
+    boolean status;           ///< Return status of nlp solve.
+    string status_text;       ///< Status text description.
+    NlpFuncStat n_call;       ///< Number of calls.
+    NlpFuncStat t_proc;       ///< Time spent (multi-threaded).
+    NlpFuncStat t_wall;       ///< Wall clock time spent.
+    double obj;               ///< Objective function.
+    sequence<double> p;       ///< Parameters.
+    sequence<double> x0;      ///< Initial condition (of ODE).
+  };
+#pragma keylist OptiStats id
+
+  /// Nonlinear programming configuration settings.
+  struct NlpConfig
+  {
+    string id;              ///< Key identifier.
+    string technique;       ///< Discretization technique.
+    long degree;            ///< Degree of discretization polynomial.
+    string solver;          ///< Solver name.
+    double horizon;         ///< Prediction horizon.
+    unsigned long elements; ///< Number of optimization elements.
+    unsigned long nx;       ///< Number of decision variables in nlp.
+    unsigned long np;       ///< Number of parameters (constant).
+    unsigned long ng;       ///< Number of constraints.
+  };
+#pragma keylist NlpConfig id
+
+};

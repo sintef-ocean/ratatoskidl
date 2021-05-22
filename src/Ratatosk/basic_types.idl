@@ -1,0 +1,90 @@
+/** @file Ratatosk/basic_types.idl */
+
+/// Ratatosk instrument logging interface definition module
+module ratatosk {
+
+  module types{
+    /// Scalar double precision float.
+    struct DoubleVal{
+      double val; ///< Double precision value.
+    };
+#pragma keylist DoubleVal
+
+    /// Two dimensional vector with double precision elements.
+    struct Double2{
+      double x; ///< First coordinate.
+      double y; ///< Second coordinate.
+    };
+#pragma keylist Double2
+
+    /// Three dimensional vector with double precision elements.
+    struct Double3 {
+      double x; ///< First coordinate.
+      double y; ///< Second coordinate.
+      double z; ///< Third coordinate.
+    };
+#pragma keylist Double3
+
+    /// Four dimensional vector with double precision elements.
+    struct Double4 {
+      double x; ///< First coordinate.
+      double y; ///< Second coordinate.
+      double z; ///< Third coordinate.
+      double w; ///< Fourth coordinate.
+        };
+#pragma keylist Double4
+
+    /// GPS information about an entity.
+    struct PosInfo{
+      double lat; ///< Latitude, decimal degrees.
+      double lon; ///< Longitude, decimal degrees.
+      double sog; ///< Speed over ground [m/s].
+      double cog; ///< Course over ground [?].
+    };
+#pragma keylist PosInfo
+
+    /// Gyro information about an entity.
+    struct GyroInfo{
+      double hdt; ///< True heading of entity. [TODO: unit]
+      double rot; ///< Rate of turn. [TODO: unit]
+    };
+#pragma keylist GyroInfo
+
+    /// Wind information.
+    struct WindInfo{
+      double trueSpeed;      ///< True wind speed. [TODO: unit]
+      double trueDir;        ///< True wind direction. [TODO: unit]
+      double relSpeed;       ///< Relative wind speed (TODO: to what?).
+      double relDir;         ///< Relative wind direction (TODO: to what?).
+      double trueWindRelDir; ///< True wind's component in relative direction? TODO: fix
+    };
+#pragma keylist WindInfo
+
+    /// Depth info, typically echo sounder.
+    struct DepthInfo{
+      double depth;                ///< Depth [m].
+      double depthBelowTransducer; ///< Depth below transducer [m].
+    };
+#pragma keylist DepthInfo
+
+    /// Log info from vessel speed log.
+    struct LogInfo{
+      double speed; ///< Speed [m/s].
+    };
+#pragma keylist LogInfo
+
+    /// Water current information at depths.
+    struct CurrentAtDepth {
+      double depth;     ///< Depth of reading [m].
+      double direction; ///< The direction at which the water is flowing [rad].
+      double speed;     ///< Magnitude of the current [m/s].
+    };
+#pragma keylist CurrentAtDepth
+
+    /// Water current profile.
+    struct CurrentProfile {
+      sequence<CurrentAtDepth> currents; ///< Vector of CurrentAtDepth structs.
+    };
+#pragma keylist CurrentProfile
+  };
+};

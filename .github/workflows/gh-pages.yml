@@ -1,0 +1,41 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - main
+env:
+  DEBIAN_FRONTEND: noninteractive
+
+jobs:
+  deploy:
+    name: Docs Deploy
+    runs-on: ubuntu-20.04
+    container:
+      image: ubuntu:20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup build deps
+        run: |
+          apt-get update
+          apt-get install -y git cmake pip doxygen graphviz plantuml wget pandoc
+          wget https://sourceforge.net/projects/plantuml/files/plantuml.jar
+          mv plantuml.jar /usr/share/plantuml/
+          python3 -m pip install -r doc/requirements.txt --upgrade
+      - name: Build doc
+        run: |
+          export DOC_INSTALL=${PWD}/public/
+          mkdir build
+          cd build
+          cmake .. -DWITH_DOC=ON -DCMAKE_INSTALL_PREFIX=${DOC_INSTALL}
+          cmake --build . --target doc
+          cmake --build . --target install
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public/share/doc/RatatoskIDL/html/
+          publish_branch: gh-pages

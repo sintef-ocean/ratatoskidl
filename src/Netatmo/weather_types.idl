@@ -1,0 +1,33 @@
+/** @file Netatmo/weather_types.idl */
+
+
+/// Netatmo/Weather station data interface definition module
+module weather
+{
+
+  /// Timestamp, which holds milliseconds since UNIX epoch (January 1, 1970 00:00:00 UTC)
+  struct Timestamp
+  {
+    long long unixMillis; ///< milliseconds since UNIX epoch (int64_t).
+  };
+
+  /// Data structure for most sensor data from Netatmo weather station
+  struct ModuleData
+  {
+    string module_name;             ///< User defined name of module.
+    string type;                    ///< Module type.
+    boolean reachable;              ///< Is it connected to cloud.
+    Timestamp time;                 ///< Timestamp of sample.
+    unsigned short signal_strength; ///< Signal strength, wifi, rf: (86=bad, 56=good).
+    unsigned short battery_percent; ///< Battery percentage.
+    double CO2;                     ///< CO2, ppm.
+    double noise;                   ///< Noise, dB.
+    double humidity;                ///< Humidity, %.
+    double temperature;             ///< Temperature, Celcius.
+    string temp_trend;              ///< Trend last 12 h: up, down, stable.
+    double pressure;                ///< Pressure, mbar.
+    string pressure_trend;          ///< Trend last 12 h: up, down, stable.
+  };
+#pragma keylist ModuleData module_name
+
+};

@@ -1,0 +1,5 @@
+breathe
+exhale
+recommonmark
+Sphinx >= 4.0.0
+sphinx-rtd-theme

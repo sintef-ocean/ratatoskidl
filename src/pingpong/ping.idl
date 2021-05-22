@@ -1,0 +1,13 @@
+/** @file pingpong/ping.idl */
+
+/// Test type for pingpong
+module test{
+  module ping{
+
+    /// Ping struct
+    struct Ping{
+      long ing; ///< Ping number
+    };
+#pragma keylist Ping
+  };
+};

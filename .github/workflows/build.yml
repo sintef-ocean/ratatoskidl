@@ -1,0 +1,37 @@
+name: conan build
+
+on:
+  push:
+    branches:
+      - main
+env:
+  DEBIAN_FRONTEND: noninteractive
+
+jobs:
+  deploy:
+    name: Deploy conan package
+    runs-on: ubuntu-20.04
+    container:
+      image: ubuntu:20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup build deps
+        run: |
+          apt-get update
+          apt-get install -y git cmake pip doxygen graphviz plantuml wget pandoc
+          wget https://sourceforge.net/projects/plantuml/files/plantuml.jar
+          mv plantuml.jar /usr/share/plantuml/
+          python3 -m pip install -r doc/requirements.txt --upgrade
+          python3 -m pip install --upgrade pip setuptools wheel
+          python3 -m pip install --upgrade conan
+          conan remote add sintef ${secrets.CONAN_URL}
+          conan config set revisions_enabled=1
+          conan profile new default --detect
+          conan profile update settings.compiler.libcxx=libstdc++11 default
+      - name: Build package
+        run: |
+          conan create . sintef/stable -o RatatoskIDL:with_tests=True
+          conan create . sintef/stable -o RatatoskIDL:with_doc=True
+          conan upload --all -c -r sintef RatatoskIDL/* --retry 3

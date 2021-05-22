@@ -1,0 +1,13 @@
+/** @file pingpong/pong.idl */
+
+/// Test type for pingpong
+module test{
+  module pong{
+
+    /// Pong struct
+    struct Pong{
+      boolean ong; ///< Boolean for ping received
+    };
+#pragma keylist Pong
+  };
+};

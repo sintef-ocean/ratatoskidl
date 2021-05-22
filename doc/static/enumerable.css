@@ -1,0 +1,12 @@
+div.enumerable p.admonition-title::before {
+    content: ""; // fontawesome unicode
+}
+
+.enumerable.admonition {
+    background-color: rgba(194,194,194,.4);
+}
+
+div.enumerable p.admonition-title {
+    background-color: rgb(194,194,194);
+    color: rgb(0,0,0);
+}

@@ -1,0 +1,15 @@
+RatatoskIDL
+--------------
+
+.. toctree::
+   :caption: Readme
+   :glob:
+
+   markup/README.rst
+
+.. toctree::
+   :maxdepth: 3
+   :caption: API Reference
+   :glob:
+
+   api/library-api

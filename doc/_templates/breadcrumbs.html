@@ -1,0 +1,8 @@
+{%- extends "sphinx_rtd_theme/breadcrumbs.html" %}
+{% block breadcrumbs_aside %}
+{% if display_github %}
+<li class="wy-breadcrumbs-aside">
+  <a href="{{ github_url }}" class="fa fa-github"> Source on GitHub</a>
+</li>
+{% endif %}
+{% endblock %}
