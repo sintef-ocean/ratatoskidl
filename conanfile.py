@@ -11,6 +11,7 @@ class RatatoskIDLConan(ConanFile):
     description = "Ratatosk Interface Definition Language (IDL) files"
     license = "Apache-2.0"
     topics = ("DDS", "OpenSplice", "IDL")
+    url = "https://github.com/sintef-ocean/ratatoskidl"
     generators = ("cmake_paths")
     options = {
       "with_doc": [True, False],
