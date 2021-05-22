@@ -6,6 +6,13 @@ on:
       - main
 env:
   DEBIAN_FRONTEND: noninteractive
+  CONAN_UPLOAD: ${{ secrets.CONAN_URL }}
+  CONAN_PASSWORD_SINTEF: ${{ secrets.CONAN_PASSWORD }}
+  CONAN_LOGIN_USERNAME_SINTEF: ${{ secrets.CONAN_USER }}
+  CONAN_NON_INTERACTIVE: True
+  CONAN_USE_ALWAYS_SHORT_PATHS: True
+  CONAN_SYSREQUIRES_MODE: enabled
+  CONAN_SYSREQUIRES_SUDO: 1
 
 jobs:
   deploy:
@@ -26,7 +33,7 @@ jobs:
           python3 -m pip install -r doc/requirements.txt --upgrade
           python3 -m pip install --upgrade pip setuptools wheel
           python3 -m pip install --upgrade conan
-          conan remote add sintef ${secrets.CONAN_URL}
+          conan remote add sintef ${CONAN_UPLOAD}
           conan config set revisions_enabled=1
           conan profile new default --detect
           conan profile update settings.compiler.libcxx=libstdc++11 default
