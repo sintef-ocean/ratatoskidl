@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Introduction &mdash; Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/eq_fix.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/enumerable.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/icon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="IDL APIs" href="../api/library-api.html" />
+    <link rel="prev" title="RatatoskIDL" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #00457c" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> RatatoskIDL
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Readme</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#building">Building</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build-options-and-conan">Build options and conan</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-new-idl-libraries-to-this-repository">Adding new idl libraries to this repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-folder">Example folder</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/library-api.html">IDL APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/library-api.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/library-api.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/library-api.html#full-api">Full API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/library-api.html#namespaces">Namespaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/namespace_fkin.html">Namespace fkin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/namespace_ratatosk.html">Namespace ratatosk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/namespace_ratatosk__types.html">Namespace ratatosk::types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/namespace_test.html">Namespace test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/namespace_test__ping.html">Namespace test::ping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/namespace_test__pong.html">Namespace test::pong</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/namespace_weather.html">Namespace weather</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/library-api.html#classes-and-structs">Classes and Structs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1BatchIdVec1d.html">Struct BatchIdVec1d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1BatchKinematics2D.html">Struct BatchKinematics2D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1BatchKinematics6D.html">Struct BatchKinematics6D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1Bit.html">Struct Bit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1Command.html">Struct Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1CommandResponse.html">Struct CommandResponse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1IdVec1d.html">Struct IdVec1d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1IdVec2d.html">Struct IdVec2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1IdVec3d.html">Struct IdVec3d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1IdVec4d.html">Struct IdVec4d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1Kinematics2D.html">Struct Kinematics2D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1Kinematics6D.html">Struct Kinematics6D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1MessageID.html">Struct MessageID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1NlpConfig.html">Struct NlpConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1NlpFuncStat.html">Struct NlpFuncStat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1OptiStats.html">Struct OptiStats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1ProcessStateAutomaton.html">Struct ProcessStateAutomaton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1Real.html">Struct Real</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1ReplyHeader.html">Struct ReplyHeader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1RequestHeader.html">Struct RequestHeader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1Timestamp.html">Struct Timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1Vector1d.html">Struct Vector1d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1Vector2d.html">Struct Vector2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1Vector3d.html">Struct Vector3d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structfkin_1_1Vector4d.html">Struct Vector4d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structratatosk_1_1types_1_1CurrentAtDepth.html">Struct CurrentAtDepth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structratatosk_1_1types_1_1CurrentProfile.html">Struct CurrentProfile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structratatosk_1_1types_1_1DepthInfo.html">Struct DepthInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structratatosk_1_1types_1_1Double2.html">Struct Double2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structratatosk_1_1types_1_1Double3.html">Struct Double3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structratatosk_1_1types_1_1Double4.html">Struct Double4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structratatosk_1_1types_1_1DoubleVal.html">Struct DoubleVal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structratatosk_1_1types_1_1GyroInfo.html">Struct GyroInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structratatosk_1_1types_1_1LogInfo.html">Struct LogInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structratatosk_1_1types_1_1PosInfo.html">Struct PosInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structratatosk_1_1types_1_1WindInfo.html">Struct WindInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structtest_1_1ping_1_1Ping.html">Struct Ping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structtest_1_1pong_1_1Pong.html">Struct Pong</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structweather_1_1ModuleData.html">Struct ModuleData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structweather_1_1Timestamp.html">Struct Timestamp</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/library-api.html#enums">Enums</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/enum_namespacefkin_1a270bb4fb5438923892cd6ee7e02ad720.html">Enum CommandType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/enum_namespacefkin_1a5e26e33afb4f13df1a93d28906e73b48.html">Enum ProcessStateKind</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RatatoskIDL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Introduction</li>
+    
+    
+
+<li class="wy-breadcrumbs-aside">
+  <a href="https://github.com/sintef-ocean/ratatoskidl" class="fa fa-github"> Source on GitHub</a>
+</li>
+
+
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../api/library-api.html" class="btn btn-neutral float-right" title="IDL APIs" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="RatatoskIDL" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This project provides Interface Definition Language files as import targets. The
+IDL-files are located in <code class="docutils literal notranslate"><span class="pre">src</span></code> and the convention is that each folder is a target
+<code class="docutils literal notranslate"><span class="pre">RatatoskIDL::&lt;folder_name&gt;</span></code>, which can be used in other projects. Note that this
+project uses an <em>Exact versioning</em> scheme, so the requested version must match exactly,
+<em>major.minor.patch</em>. The following snippet shows how a consumer can use this project.</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">OpenSplice</span> <span class="s">6.9</span> <span class="s">REQUIRED</span><span class="p">)</span>
+<span class="nb">find_package</span><span class="p">(</span><span class="s">RatatoskIDL</span> <span class="s">0.2.0</span> <span class="s">CONFIG</span> <span class="s">REQUIRED</span><span class="p">)</span>
+
+<span class="c"># pingpong is the target with IDL sources</span>
+<span class="nb">ratatosk_add_idl_library</span><span class="p">(</span><span class="s">ping-dds</span> <span class="s">pingpong</span><span class="p">)</span>
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">test-ping</span> <span class="s">ping.cpp</span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">test-ping</span> <span class="s">ping-dds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">RatatoskIDL</span></code> defines pseudo-targets with a property <code class="docutils literal notranslate"><span class="pre">IDL_SOURCES</span></code>, which is a list of
+IDL files for that target. A full example is provided in <code class="docutils literal notranslate"><span class="pre">examples</span></code>. To list targets
+that <code class="docutils literal notranslate"><span class="pre">RatatoskIDL</span></code> provides, see the file hierarchy in the documentation or browse the
+source directory <code class="docutils literal notranslate"><span class="pre">&lt;INSTALL_PREFIX&gt;/share/RatatoskIDL</span></code>, e.g with
+<code class="docutils literal notranslate"><span class="pre">&lt;INSTALL_PREFIX&gt;=/usr/local/</span></code> on Linux.</p>
+<p>The CMake function <code class="docutils literal notranslate"><span class="pre">ratatosk_add_idl_library()</span></code> creates an <em>OBJECT</em> library, which
+provides the generated interface header files during building, that can be linked to the
+library or executable in need of the interface. So e.g. for <code class="docutils literal notranslate"><span class="pre">pingpong</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// &lt;target_name&gt;/&lt;idl_filename&gt;_DCPS.hpp</span>
+<span class="cp">#include</span> <span class="cpf">&quot;pingpong/ping_DCPS.hpp&quot;</span><span class="cp"></span>
+</pre></div>
+</div>
+<section id="building">
+<h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
+<p>The IDL files are architecture-independent and require no compiler. Only <code class="docutils literal notranslate"><span class="pre">CMake</span> <span class="pre">&gt;=</span> <span class="pre">3.10</span></code> is needed. Building and installing will make it available to other projects with
+<code class="docutils literal notranslate"><span class="pre">find_package</span></code> using the <code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> flag. There are also <code class="docutils literal notranslate"><span class="pre">.deb</span></code> and <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> archive
+packages.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+cmake .. -DWITH_DOC<span class="o">=</span>OFF
+cmake --build . --target install
+cmake --build . --target package  <span class="c1"># Build .deb and/or .tar.gz</span>
+</pre></div>
+</div>
+<section id="build-options-and-conan">
+<h3>Build options and conan<a class="headerlink" href="#build-options-and-conan" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">RatatoskIDL</span></code> is available as a conan package. <code class="docutils literal notranslate"><span class="pre">RatatoskIDL</span></code> itself does not depend on
+OpenSplice unless the CMake function <code class="docutils literal notranslate"><span class="pre">ratatosk_add_idl_library()</span></code> is used. The
+<code class="docutils literal notranslate"><span class="pre">examples</span></code> directory provides an example on how to use it as a consumer. The conan
+package is available by adding the following conan remote:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conan remote add sintef https://conan.sintef.io/public
+conan config <span class="nb">set</span> general.revisions_enabled<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p>First, you can add the following to your <a class="reference external" href="https://docs.conan.io/en/latest/reference/conanfile_txt.html">conanfile.txt</a>:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[requires]</span>
+<span class="na">RatatoskIDL/</span><span class="o">=</span><span class="s">0.2.0@sintef/stable</span>
+<span class="na">opensplice-ce/[&gt;</span><span class="o">=</span><span class="s">6.9]@sintef/testing</span>
+
+<span class="k">[generators]</span>
+<span class="na">cmake_paths</span>
+<span class="na">cmake</span>
+<span class="na">virtualenv</span>
+
+<span class="k">[options]</span>
+<span class="na">RatatoskIDL:with_doc</span><span class="o">=</span><span class="s">False</span>
+</pre></div>
+</div>
+<p>Then, add this to CMakeLists.txt before the CMake snippet above.</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">include</span><span class="p">(</span><span class="o">${</span><span class="nv">CMAKE_BINARY_DIR</span><span class="o">}</span><span class="s">/conanbuildinfo.cmake</span><span class="p">)</span>
+<span class="nb">conan_basic_setup</span><span class="p">()</span>
+<span class="nb">include</span><span class="p">(</span><span class="o">${</span><span class="nv">CMAKE_BINARY_DIR</span><span class="o">}</span><span class="s">/conan_paths.cmake</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 14%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option (conan/CMake)</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">with_doc</span> <span class="pre">/</span> <span class="pre">WITH_DOC</span></code></p></td>
+<td><p>False / OFF</p></td>
+<td><p>Build documentation</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">with_tests</span> <span class="pre">/</span> <span class="pre">WITH_TESTS</span></code></p></td>
+<td><p>False / OFF</p></td>
+<td><p>Build IDL targets to check syntax</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">with_CICD</span></code> / N/A</p></td>
+<td><p>False</p></td>
+<td><p>Internal CI/CD build script as build requirement</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>The table above shows available configuration options for the package.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">WITH_TESTS=ON</span></code></dt><dd><p>Build the libraries for C++ (isocpp2), as a way of confirming
+that the IDL syntax is correct. This test requires OpenSplice.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">WITH_DOC=ON</span></code></dt><dd><p>Build documentation using <code class="docutils literal notranslate"><span class="pre">doxygen</span></code> and <code class="docutils literal notranslate"><span class="pre">sphinx</span></code>, see requirements
+below.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">with_CICD=True</span></code></dt><dd><p>A conan-only requirement to add internal <code class="docutils literal notranslate"><span class="pre">SfhBuildScripts</span></code>.</p>
+</dd>
+</dl>
+<p><strong>Documentation requirements *(optional)*</strong></p>
+<p>The documentation is built with the help of <code class="docutils literal notranslate"><span class="pre">doxygen</span></code> and <code class="docutils literal notranslate"><span class="pre">sphinx</span></code>. There are also
+additional python packages listed in <code class="docutils literal notranslate"><span class="pre">doc/requirements.txt</span></code>. The requirements can be
+installed with:</p>
+<p><strong>Debian linux</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get install doxygen
+python -m pip install -r doc/requirements.txt --upgrade
+</pre></div>
+</div>
+<p><strong>Windows</strong>, assuming you have the <a class="reference external" href="https://chocolatey.org/">chocolatey</a> package manager:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>choco install -y doxygen.install
+python -m pip install -r doc/requirements.txt --upgrade
+</pre></div>
+</div>
+</section>
+</section>
+<section id="adding-new-idl-libraries-to-this-repository">
+<h2>Adding new idl libraries to this repository<a class="headerlink" href="#adding-new-idl-libraries-to-this-repository" title="Permalink to this headline">¶</a></h2>
+<p>When a new library is to be added, the developer needs to manually edit
+<code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>. Suppose you have created IDL files <code class="docutils literal notranslate"><span class="pre">hugin.idl</span></code> and <code class="docutils literal notranslate"><span class="pre">munin.idl</span></code>. You
+want them to be part of a component named <code class="docutils literal notranslate"><span class="pre">Midgard</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Place <code class="docutils literal notranslate"><span class="pre">{hugin.idl,</span> <span class="pre">munin.idl}</span></code> in <code class="docutils literal notranslate"><span class="pre">src/Midgard/</span></code></p></li>
+<li><p>Add to <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>:  <code class="docutils literal notranslate"><span class="pre">ratatosk_idl_lib(Midgard</span> <span class="pre">&quot;hugin.idl</span> <span class="pre">munin.idl&quot;)</span></code></p></li>
+<li><p>Increase the version of the project.</p></li>
+<li><p>Update version in <code class="docutils literal notranslate"><span class="pre">conanfile.txt</span></code> snippet in this readme and in <code class="docutils literal notranslate"><span class="pre">examples/conanfile.txt</span></code>.</p></li>
+</ol>
+</section>
+<section id="example-folder">
+<h2>Example folder<a class="headerlink" href="#example-folder" title="Permalink to this headline">¶</a></h2>
+<p>To build the example, please make sure that <code class="docutils literal notranslate"><span class="pre">RatatoskIDL</span></code> and <code class="docutils literal notranslate"><span class="pre">openoplice-ce</span></code> are
+properly installed. This is easily achived using the example <code class="docutils literal notranslate"><span class="pre">conanfile.txt</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conan remote add sintef https://api.bintray.com/conan/sintef-ocean/conan
+<span class="nb">cd</span> examples <span class="o">&amp;&amp;</span> mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+conan install ..
+cmake ..
+cmake --build .
+. activate.sh  <span class="c1"># sets OpenSplice environment variables</span>
+bin/test-ping
+<span class="c1"># And in another terminal:</span>
+. activate.sh
+bin/test-pong
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../api/library-api.html" class="btn btn-neutral float-right" title="IDL APIs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="RatatoskIDL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SINTEF Ocean.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

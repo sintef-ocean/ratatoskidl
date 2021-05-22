@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Program Listing for File weather_types.idl &mdash; Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/eq_fix.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/enumerable.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/icon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #00457c" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> RatatoskIDL
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Readme</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../markup/README.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../markup/README.html#building">Building</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../markup/README.html#build-options-and-conan">Build options and conan</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../markup/README.html#adding-new-idl-libraries-to-this-repository">Adding new idl libraries to this repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../markup/README.html#example-folder">Example folder</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="library-api.html">IDL APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="library-api.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library-api.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library-api.html#full-api">Full API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="library-api.html#namespaces">Namespaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="namespace_fkin.html">Namespace fkin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_ratatosk.html">Namespace ratatosk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_ratatosk__types.html">Namespace ratatosk::types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_test.html">Namespace test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_test__ping.html">Namespace test::ping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_test__pong.html">Namespace test::pong</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_weather.html">Namespace weather</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library-api.html#classes-and-structs">Classes and Structs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1BatchIdVec1d.html">Struct BatchIdVec1d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1BatchKinematics2D.html">Struct BatchKinematics2D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1BatchKinematics6D.html">Struct BatchKinematics6D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1Bit.html">Struct Bit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1Command.html">Struct Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1CommandResponse.html">Struct CommandResponse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1IdVec1d.html">Struct IdVec1d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1IdVec2d.html">Struct IdVec2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1IdVec3d.html">Struct IdVec3d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1IdVec4d.html">Struct IdVec4d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1Kinematics2D.html">Struct Kinematics2D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1Kinematics6D.html">Struct Kinematics6D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1MessageID.html">Struct MessageID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1NlpConfig.html">Struct NlpConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1NlpFuncStat.html">Struct NlpFuncStat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1OptiStats.html">Struct OptiStats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1ProcessStateAutomaton.html">Struct ProcessStateAutomaton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1Real.html">Struct Real</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1ReplyHeader.html">Struct ReplyHeader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1RequestHeader.html">Struct RequestHeader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1Timestamp.html">Struct Timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1Vector1d.html">Struct Vector1d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1Vector2d.html">Struct Vector2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1Vector3d.html">Struct Vector3d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structfkin_1_1Vector4d.html">Struct Vector4d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structratatosk_1_1types_1_1CurrentAtDepth.html">Struct CurrentAtDepth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structratatosk_1_1types_1_1CurrentProfile.html">Struct CurrentProfile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structratatosk_1_1types_1_1DepthInfo.html">Struct DepthInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structratatosk_1_1types_1_1Double2.html">Struct Double2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structratatosk_1_1types_1_1Double3.html">Struct Double3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structratatosk_1_1types_1_1Double4.html">Struct Double4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structratatosk_1_1types_1_1DoubleVal.html">Struct DoubleVal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structratatosk_1_1types_1_1GyroInfo.html">Struct GyroInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structratatosk_1_1types_1_1LogInfo.html">Struct LogInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structratatosk_1_1types_1_1PosInfo.html">Struct PosInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structratatosk_1_1types_1_1WindInfo.html">Struct WindInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structtest_1_1ping_1_1Ping.html">Struct Ping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structtest_1_1pong_1_1Pong.html">Struct Pong</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structweather_1_1ModuleData.html">Struct ModuleData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structweather_1_1Timestamp.html">Struct Timestamp</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library-api.html#enums">Enums</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacefkin_1a270bb4fb5438923892cd6ee7e02ad720.html">Enum CommandType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacefkin_1a5e26e33afb4f13df1a93d28906e73b48.html">Enum ProcessStateKind</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RatatoskIDL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Program Listing for File weather_types.idl</li>
+    
+    
+
+<li class="wy-breadcrumbs-aside">
+  <a href="https://github.com/sintef-ocean/ratatoskidl" class="fa fa-github"> Source on GitHub</a>
+</li>
+
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="program-listing-for-file-weather-types-idl">
+<span id="program-listing-file-src-netatmo-weather-types-idl"></span><h1>Program Listing for File weather_types.idl<a class="headerlink" href="#program-listing-for-file-weather-types-idl" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_src_Netatmo_weather_types.idl.html#file-src-netatmo-weather-types-idl"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">src/Netatmo/weather_types.idl</span></code>)</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>module weather
+{
+
+  struct Timestamp
+  {
+    <span class="nb">long</span> <span class="nb">long</span> unixMillis;
+  };
+
+  struct ModuleData
+  {
+    <span class="nb">string</span> module_name;
+    <span class="nb">string</span> type;
+    boolean reachable;
+    Timestamp time;
+    unsigned short signal_strength;
+    unsigned short battery_percent;
+    <span class="nb">double</span> CO2;
+    <span class="nb">double</span> noise;
+    <span class="nb">double</span> humidity;
+    <span class="nb">double</span> temperature;
+    <span class="nb">string</span> temp_trend;
+    <span class="nb">double</span> pressure;
+    <span class="nb">string</span> pressure_trend;
+  };
+<span class="o">#</span>pragma keylist ModuleData module_name
+
+};
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SINTEF Ocean.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
