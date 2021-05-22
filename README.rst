@@ -158,7 +158,7 @@ properly installed. This is easily achived using the example ``conanfile.txt``.
 
 .. code-block:: bash
 
-    conan remote add sintef https://api.bintray.com/conan/sintef-ocean/conan
+    conan remote add sintef https://conan.sintef.io/public
     cd examples && mkdir build && cd build
     conan install ..
     cmake ..

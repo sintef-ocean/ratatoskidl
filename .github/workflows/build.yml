@@ -34,7 +34,7 @@ jobs:
           python3 -m pip install --upgrade pip setuptools wheel
           python3 -m pip install --upgrade conan
           conan remote add sintef ${CONAN_UPLOAD}
-          conan config set revisions_enabled=1
+          conan config set general.revisions_enabled=1
           conan profile new default --detect
           conan profile update settings.compiler.libcxx=libstdc++11 default
       - name: Build package
