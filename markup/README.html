@@ -300,7 +300,7 @@ cmake --build . --target package  <span class="c1"># Build .deb and/or .tar.gz</
 OpenSplice unless the CMake function <code class="docutils literal notranslate"><span class="pre">ratatosk_add_idl_library()</span></code> is used. The
 <code class="docutils literal notranslate"><span class="pre">examples</span></code> directory provides an example on how to use it as a consumer. The conan
 package is available by adding the following conan remote:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conan remote add sintef https://conan.sintef.io/public
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conan remote add sintef https://artifactory.smd.sintef.no/artifactory/api/conan/conan-local
 conan config <span class="nb">set</span> general.revisions_enabled<span class="o">=</span><span class="m">1</span>
 </pre></div>
 </div>
@@ -398,7 +398,7 @@ want them to be part of a component named <code class="docutils literal notransl
 <h2>Example folder<a class="headerlink" href="#example-folder" title="Permalink to this headline">¶</a></h2>
 <p>To build the example, please make sure that <code class="docutils literal notranslate"><span class="pre">RatatoskIDL</span></code> and <code class="docutils literal notranslate"><span class="pre">openoplice-ce</span></code> are
 properly installed. This is easily achived using the example <code class="docutils literal notranslate"><span class="pre">conanfile.txt</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conan remote add sintef https://conan.sintef.io/public
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conan remote add sintef https://artifactory.smd.sintef.no/artifactory/api/conan/conan-local
 <span class="nb">cd</span> examples <span class="o">&amp;&amp;</span> mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
 conan install ..
 cmake ..
