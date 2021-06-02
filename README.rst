@@ -59,7 +59,7 @@ package is available by adding the following conan remote:
 
 .. code-block:: bash
 
-    conan remote add sintef https://conan.sintef.io/public
+    conan remote add sintef https://artifactory.smd.sintef.no/artifactory/api/conan/conan-local
     conan config set general.revisions_enabled=1
 
 First, you can add the following to your `conanfile.txt <https://docs.conan.io/en/latest/reference/conanfile_txt.html>`_:
@@ -158,7 +158,7 @@ properly installed. This is easily achived using the example ``conanfile.txt``.
 
 .. code-block:: bash
 
-    conan remote add sintef https://conan.sintef.io/public
+    conan remote add sintef https://artifactory.smd.sintef.no/artifactory/api/conan/conan-local
     cd examples && mkdir build && cd build
     conan install ..
     cmake ..
