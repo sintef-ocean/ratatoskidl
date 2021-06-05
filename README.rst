@@ -68,7 +68,7 @@ First, you can add the following to your `conanfile.txt <https://docs.conan.io/e
 
     [requires]
     RatatoskIDL/=0.2.0@sintef/stable
-    opensplice-ce/[>=6.9]@sintef/testing
+    opensplice-ce/[>=6.9]@sintef/stable
 
     [generators]
     cmake_paths
